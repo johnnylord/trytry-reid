@@ -269,6 +269,7 @@ class TripletAgent:
         checkpoint = {
             'model': self.model.state_dict(),
             'optimizer': self.optimizer.state_dict(),
+            'schedular': self.schedular.state_dict(),
             'current_epoch': self.current_epoch,
             'current_mAP': self.best_mAP
             }
