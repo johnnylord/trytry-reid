@@ -110,7 +110,11 @@ class ReidDataset:
 
         os.makedirs(dataset_dir)
         fpath = osp.join(dataset_dir, osp.basename(dataset_url))
-        utils.download_from_url(dataset_url, fpath)
+        if 'dropbox' in dataset_url:
+            fpath = fpath.split("?")[0]
+            utils.download_from_dropbox(dataset_url, fpath)
+        else:
+            utils.download_from_url(dataset_url, fpath)
 
         if fpath.endswith('tar'):
             tar = tarfile.open(fpath)

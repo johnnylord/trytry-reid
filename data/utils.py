@@ -34,3 +34,14 @@ def download_from_url(url, dst):
                 pbar.update(1024)
     pbar.close()
     return file_size
+
+def download_from_dropbox(url, dst):
+    """Download file from dropbox
+
+    Args:
+        url (str): url to download file
+        dst (str): place to put the file
+    """
+    downloaded_file = requests.get(url)
+    with open(dst, 'wb') as f:
+        f.write(downloaded_file.content)

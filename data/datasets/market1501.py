@@ -19,7 +19,7 @@ class Market1501(base.ReidImageDataset):
         images: 12936 (train) + 3368 (query) + 15913 (gallery)
     """
     dataset_dir = 'market1501'
-    dataset_url = 'http://188.138.127.15:81/Datasets/Market-1501-v15.09.15.zip'
+    dataset_url = 'https://www.dropbox.com/s/5gypc42z6vdbbtu/Market-1501-v15.09.15.zip?dl=1'
 
     def __init__(self, root, **kwargs):
         # Download dataset if needed
